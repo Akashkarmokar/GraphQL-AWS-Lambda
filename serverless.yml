@@ -1,0 +1,21 @@
+service: Project-AK
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  graphql:
+    handler: graphql/server.graphqlHandler
+    events:
+      - httpApi:
+          path: /
+          method: POST
+      - httpApi:
+          path: /
+          method: GET
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
