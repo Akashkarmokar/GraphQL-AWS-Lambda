@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "outDir": "dist",
+      "target": "ESNext",
+      "module": "es2022",
+      "outDir": ".build",
+      "rootDir": "./",
       "strict": true,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "moduleResolution": "Node"
     },
     "include": [
-      "src/**/*.ts"
+      "graphql/**/*.ts"
     ]
   }
   

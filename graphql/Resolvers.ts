@@ -1,5 +1,5 @@
-import { Auth_Mutations } from "./auth/Auth.Mutation"
-import { Auth_Querys } from './auth/Auth.Query'
+import { Auth_Mutations } from "./auth/Auth.Mutation.js"
+import { Auth_Querys } from './auth/Auth.Query.js'
 
 
 const All_Querys: Object = {

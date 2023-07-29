@@ -1,5 +1,5 @@
-import { Isign_in_dto} from './Auth.Interface'
-import { AuthValidator } from './Auth.validators'
+import { Isign_in_dto} from './Auth.Interface.js'
+import { AuthValidator } from './Auth.validators.js'
 
 export const sign_in = async (parent: void, args: Isign_in_dto, context: Object) => {
     console.log(AuthValidator.isEmailValid(args.email));

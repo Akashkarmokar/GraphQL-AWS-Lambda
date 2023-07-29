@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "It is the backend server of my protfolio project, will be graphQl based (Apollo GraphQL) ",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,24 +1,24 @@
 import { ApolloServer } from '@apollo/server';
 import { loadSchemaSync } from '@graphql-tools/load';
 import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
-import resolvers from '../Resolvers'
-import { initDBConnection  } from './db_connection';
+import resolvers from '../Resolvers.js'
+import { initDBConnection  } from './db_connection.js';
 
 
 const typeDefs = loadSchemaSync('./**/*.graphql', {
     loaders: [new GraphQLFileLoader()],
 });
 
-export class OurApolloGraphQLServer extends ApolloServer {
-    private constructor(){
+export class GraphQLServer extends ApolloServer {
+    constructor(){
         super({
             typeDefs: typeDefs,
-            resolvers: resolvers
+            resolvers: resolvers,
         })
     }
     public static async build(){
         await initDBConnection()
-        return new OurApolloGraphQLServer()
+        return new GraphQLServer()
     }
 }
 
