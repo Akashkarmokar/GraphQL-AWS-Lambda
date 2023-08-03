@@ -1,0 +1,21 @@
+import gql from "graphql-tag"
+
+export const AuthSchema = gql`
+    type sign_in_response {
+        status: String
+    }
+
+    input sing_in_dto {
+        email: String
+        password: String
+    }
+
+    type Query {
+        users: String
+    }
+
+    type Mutation {
+        signin(inputData: sing_in_dto): sign_in_response
+    }
+`
+
