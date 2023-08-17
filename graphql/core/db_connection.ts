@@ -1,8 +1,13 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 
-export const initDBConnection = async ()=>{
-    let db_connection_string = "mongodb://localhost:2701/project_ak"
-    await mongoose.connect(db_connection_string)
-    console.log(" ****** Database is connected *********")
+export const initDBConnection = async (connectionString: string = '') =>{
+    let connectionInstance =  null;
+    try {
+        connectionInstance = await mongoose.connect(connectionString)
+    }catch (err){
+        console.log(`Database connection error ${err}`)
+    } finally {
+        return connectionInstance
+    }
 }

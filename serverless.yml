@@ -5,6 +5,8 @@ provider:
   name: aws
   runtime: nodejs18.x
 
+useDotenv: true
+
 functions:
   graphql:
     handler: graphql/server.graphqlHandler
