@@ -10,6 +10,7 @@ export class GraphQLServer extends ApolloServer {
         super({
             csrfPrevention: false,
             schema: schema,
+            introspection: process.env.APP_ENV === 'production' ? false : true
         })
     }
     public static async build(){
